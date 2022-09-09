@@ -8,6 +8,7 @@
   --secondary-white-color: rgba(255, 255, 255, 0.6);
   --accent-color: #2196f3;
   --dark-logo-color: #000000;
+  --shadow-img: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 body {
@@ -24,11 +25,55 @@ body {
 
 .list {
   list-style: none;
+  margin: 0;
+  padding-left: 0;
 }
 
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+h2,
+p {
+  margin: 0;
+}
 /* CSS for index.html */
 
 /* Header section*/
+
+.header {
+  padding-top: 24px;
+  padding-bottom: 25px;
+  border: 1px solid #ececec;
+}
+
+.header-body {
+  display: flex;
+  align-items: center;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-list {
+  display: flex;
+  margin-left: 93px;
+}
+
+.nav-list .item:not(:last-child) {
+  margin-right: 50px;
+}
 
 .header-logo,
 .footer-logo {
@@ -45,6 +90,8 @@ body {
 }
 
 .nav-link {
+  display: block;
+
   color: var(--title-color);
   font-weight: 500;
   line-height: 1.14;
@@ -58,6 +105,15 @@ body {
 
 .nav-link.current {
   color: var(--accent-color);
+}
+
+.header-contacts {
+  display: flex;
+  margin-left: auto;
+}
+
+.header-contacts .item + .item {
+  margin-left: 50px;
 }
 
 .header-contacts .contacts {
@@ -76,19 +132,28 @@ a.contacts:focus {
 
 .hero {
   background-color: var(--section-background-color);
+  text-align: center;
 }
 
 .hero-title {
+  margin-top: 0;
+  margin-bottom: 30px;
+
   color: var(--white-color);
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
-  text-align: center;
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
 .button {
+  display: inline-block;
+  border-width: 0;
+  border-radius: 4px;
+  padding: 10px 32px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
   background-color: var(--accent-color);
   color: var(--white-color);
   font-family: inherit;
@@ -107,6 +172,10 @@ a.contacts:focus {
 
 /* Benefits section */
 
+.section {
+  padding: 94px 0;
+}
+
 .visually-hidden {
   position: absolute;
   white-space: nowrap;
@@ -120,7 +189,24 @@ a.contacts:focus {
   margin: -1px;
 }
 
+.benefits-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.benefits-list > .item {
+  flex-basis: calc((100% - 90px) / 4);
+  margin-right: 30px;
+}
+
+.benefits-list > .item:last-child {
+  margin-right: 0;
+}
+
 .benefits-title {
+  margin-top: 0;
+  margin-bottom: 10px;
+
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
@@ -135,10 +221,26 @@ a.contacts:focus {
 /* Activity section */
 
 .section-title {
+  margin-top: 0;
+  margin-bottom: 50px;
+
   font-weight: 700;
   font-size: 36px;
   line-height: 1.17;
   text-align: center;
+}
+
+.activity-list {
+  display: flex;
+}
+
+.activity-list > .item {
+  flex-basis: calc((100% - 60px) / 3);
+  margin-right: 30px;
+}
+
+.activity-list > .item:last-child {
+  margin-right: 0;
 }
 
 /* Team section */
@@ -147,17 +249,38 @@ a.contacts:focus {
   background-color: var(--list-background-color);
 }
 
+.team-list {
+  display: flex;
+   text-align: center;
+}
+
+.team-list > .team-item {
+  flex-basis: calc((100% - 90px) / 4);
+  margin-right: 30px;
+}
+
+.team-list > .team-item:last-child {
+    margin-right: 0;
+}
+
 .team-item {
   background-color: var(--main-background-color);
+  box-shadow: var(--shadow-img);
+  border-radius: 0px 0px 4px 4px;
 }
 
 .team-title {
+  margin-top: 30px;
+  margin-bottom: 10px;
+
   font-weight: 500;
   font-size: 16px;
   line-height: 1.19;
 }
 
 .team-desc {
+  margin-bottom: 30px;
+
   color: var(--desc-color);
   font-size: 16px;
   line-height: 1.19;
@@ -166,8 +289,16 @@ a.contacts:focus {
 /* Footer section */
 
 .footer {
+  padding-top: 60px;
+  padding-bottom: 60px;
+
   background-color: var(--section-background-color);
   line-height: 1.71;
+}
+
+.footer-logo {
+  display: block;
+  margin-bottom: 20px;
 }
 
 .footer .footer-logo,
