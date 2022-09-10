@@ -8,8 +8,10 @@
   --white-color: #ffffff;
   --secondary-white-color: rgba(255, 255, 255, 0.6);
   --accent-color: #2196f3;
+  --activ-btn-color: #188ce8;
   --dark-logo-color: #000000;
   --border-project-color: #eeeeee;
+  --border-header-color: #ececec;
 
   --shadow-img: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -46,7 +48,6 @@ body {
 img {
   display: block;
   max-width: 100%;
-  height: auto;
 }
 
 h2,
@@ -58,9 +59,7 @@ p {
 /* Header section*/
 
 .header {
-  padding-top: 24px;
-  padding-bottom: 25px;
-  border: 1px solid #ececec;
+  border: 1px solid var(--border-header-color);
 }
 
 .header-body {
@@ -98,6 +97,8 @@ p {
 
 .nav-link {
   display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
 
   color: var(--title-color);
   font-weight: 500;
@@ -117,13 +118,14 @@ p {
 .header-contacts {
   display: flex;
   margin-left: auto;
-}
-
-.header-contacts .item + .item {
-  margin-left: 50px;
+  gap: 50px;
 }
 
 .header-contacts .contacts {
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
+
   color: var(--desc-color);
   font-weight: 500;
   line-height: 1.14;
@@ -179,14 +181,14 @@ a.contacts:focus {
 
 .button:hover,
 .button:focus {
-  background-color: #188ce8;
+  background-color: var(--activ-btn-color);
   color: var(--white-color);
 }
 
 /* Benefits section */
 
-.section {
-  padding: 94px 0;
+.benefits-section {
+  padding: 94px 0 47px 0;
 }
 
 .visually-hidden {
@@ -205,15 +207,11 @@ a.contacts:focus {
 .benefits-list {
   display: flex;
   flex-wrap: wrap;
+  gap: 30px;
 }
 
 .benefits-list > .item {
   flex-basis: calc((100% - 90px) / 4);
-  margin-right: 30px;
-}
-
-.benefits-list > .item:last-child {
-  margin-right: 0;
 }
 
 .benefits-title {
@@ -233,8 +231,8 @@ a.contacts:focus {
 
 /* Activity section */
 
-.second-section {
-  padding: 0 0 94px 0;
+.activity-section {
+  padding: 47px 0 94px 0;
 }
 
 .section-title {
@@ -249,18 +247,18 @@ a.contacts:focus {
 
 .activity-list {
   display: flex;
+  gap: 30px;
 }
 
 .activity-list > .item {
   flex-basis: calc((100% - 60px) / 3);
-  margin-right: 30px;
-}
-
-.activity-list > .item:last-child {
-  margin-right: 0;
 }
 
 /* Team section */
+
+.section {
+  padding: 94px 0;
+}
 
 .team {
   background-color: var(--list-background-color);
@@ -269,15 +267,11 @@ a.contacts:focus {
 .team-list {
   display: flex;
   text-align: center;
+  gap: 30px;
 }
 
 .team-list > .team-item {
   flex-basis: calc((100% - 90px) / 4);
-  margin-right: 30px;
-}
-
-.team-list > .team-item:last-child {
-  margin-right: 0;
 }
 
 .team-item {
@@ -286,8 +280,13 @@ a.contacts:focus {
   border-radius: 0px 0px 4px 4px;
 }
 
+.team-container {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
 .team-title {
-  margin-top: 30px;
+  margin-top: 0;
   margin-bottom: 10px;
 
   font-weight: 500;
@@ -296,8 +295,6 @@ a.contacts:focus {
 }
 
 .team-desc {
-  margin-bottom: 30px;
-
   color: var(--desc-color);
   font-size: 16px;
   line-height: 1.19;
@@ -336,7 +333,7 @@ address {
   display: block;
 }
 
-.item > .contacts {
+.footer-contacts .item > .contacts {
   margin-top: 9px;
 }
 
@@ -350,9 +347,9 @@ address {
 
 .filter {
   display: flex;
-  margin: 0 auto 50px;
-  max-width: 575px;
-  justify-content: space-between;
+  justify-content: center;
+  margin-bottom: 50px;
+  gap: 8px;
 }
 
 .filter-btn {
@@ -402,24 +399,14 @@ address {
 .projects-list {
   display: flex;
   flex-wrap: wrap;
+  margin-left: -30px;
+  margin-top: -30px;
 }
 
 .projects-list > .projects-item {
-  flex-basis: calc((100% - 60px) / 3);
-  margin-right: 30px;
-  margin-bottom: 30px;
-}
-
-.projects-list > .projects-item:nth-child(3n) {
-  margin-right: 0;
-}
-
-.projects-list > .projects-item:nth-last-child(-n + 3) {
-  margin-bottom: 0;
-}
-
-.projects-item {
-  border: 1px solid var(--border-project-color);
+  flex-basis: calc(100% / 3 - 30px);
+  margin-left: 30px;
+  margin-top: 30px;
 }
 
 .project-title {
@@ -439,4 +426,7 @@ address {
 
 .project-container {
   padding: 20px 24px;
+  border-right: 1px solid var(--border-project-color);
+  border-bottom: 1px solid var(--border-project-color);
+  border-left: 1px solid var(--border-project-color);
 }
