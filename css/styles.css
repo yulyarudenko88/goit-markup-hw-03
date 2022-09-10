@@ -2,13 +2,20 @@
   --main-background-color: #ffffff;
   --section-background-color: #2f303a;
   --list-background-color: #f5f4fa;
+
   --title-color: #212121;
   --desc-color: #757575;
   --white-color: #ffffff;
   --secondary-white-color: rgba(255, 255, 255, 0.6);
   --accent-color: #2196f3;
   --dark-logo-color: #000000;
-  --shadow-img: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  --border-project-color: #eeeeee;
+
+  --shadow-img: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  --shadow-btn: rgba(0, 0, 0, 0.15);
+  --shadow-filter-btn: 0px 3px 1px rgba(0, 0, 0, 0.1),
+    0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 body {
@@ -131,13 +138,18 @@ a.contacts:focus {
 /* Hero section */
 
 .hero {
+  padding: 200px 0;
+
   background-color: var(--section-background-color);
   text-align: center;
 }
 
 .hero-title {
+  max-width: 696px;
   margin-top: 0;
+  margin-right: auto;
   margin-bottom: 30px;
+  margin-left: auto;
 
   color: var(--white-color);
   font-weight: 900;
@@ -151,8 +163,9 @@ a.contacts:focus {
   display: inline-block;
   border-width: 0;
   border-radius: 4px;
+  border-style: none;
   padding: 10px 32px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 4px 4px var(--shadow-btn);
 
   background-color: var(--accent-color);
   color: var(--white-color);
@@ -220,6 +233,10 @@ a.contacts:focus {
 
 /* Activity section */
 
+.second-section {
+  padding: 0 0 94px 0;
+}
+
 .section-title {
   margin-top: 0;
   margin-bottom: 50px;
@@ -251,7 +268,7 @@ a.contacts:focus {
 
 .team-list {
   display: flex;
-   text-align: center;
+  text-align: center;
 }
 
 .team-list > .team-item {
@@ -260,7 +277,7 @@ a.contacts:focus {
 }
 
 .team-list > .team-item:last-child {
-    margin-right: 0;
+  margin-right: 0;
 }
 
 .team-item {
@@ -310,6 +327,19 @@ address {
   font-style: normal;
 }
 
+.footer-address {
+  width: 231px;
+}
+
+.footer-address .item > .address,
+.footer-address .item > .contacts {
+  display: block;
+}
+
+.item > .contacts {
+  margin-top: 9px;
+}
+
 .footer-contacts .contacts {
   color: var(--secondary-white-color);
 }
@@ -318,7 +348,20 @@ address {
 
 /* Our projects section */
 
+.filter {
+  display: flex;
+  margin: 0 auto 50px;
+  max-width: 575px;
+  justify-content: space-between;
+}
+
 .filter-btn {
+  display: inline-block;
+  border-width: 0;
+  border-radius: 4px;
+  border-style: none;
+  padding: 6px 22px;
+
   background-color: var(--list-background-color);
   color: var(--title-color);
   font-family: inherit;
@@ -328,13 +371,60 @@ address {
   cursor: pointer;
 }
 
+.filter .first {
+  min-width: 73px;
+  padding: 6px 25px;
+}
+
+.filter .second {
+  min-width: 125px;
+}
+
+.filter .third {
+  min-width: 112px;
+}
+
+.filter .fourth {
+  min-width: 103px;
+}
+
+.filter .fifth {
+  min-width: 130px;
+}
+
 .filter-btn:hover,
 .filter-btn:focus {
   background-color: var(--accent-color);
   color: var(--white-color);
+  box-shadow: var(--shadow-filter-btn);
+}
+
+.projects-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.projects-list > .projects-item {
+  flex-basis: calc((100% - 60px) / 3);
+  margin-right: 30px;
+  margin-bottom: 30px;
+}
+
+.projects-list > .projects-item:nth-child(3n) {
+  margin-right: 0;
+}
+
+.projects-list > .projects-item:nth-last-child(-n + 3) {
+  margin-bottom: 0;
+}
+
+.projects-item {
+  border: 1px solid var(--border-project-color);
 }
 
 .project-title {
+  margin-bottom: 4px;
+
   color: var(--title-color);
   font-size: 18px;
   line-height: 2;
@@ -345,4 +435,8 @@ address {
   color: var(--desc-color);
   font-size: 16px;
   line-height: 1.88;
+}
+
+.project-container {
+  padding: 20px 24px;
 }
