@@ -59,7 +59,7 @@ p {
 /* Header section*/
 
 .header {
-  border: 1px solid var(--border-header-color);
+  border-bottom: 1px solid var(--border-header-color);
 }
 
 .header-body {
@@ -324,10 +324,6 @@ address {
   font-style: normal;
 }
 
-.footer-address {
-  width: 231px;
-}
-
 .footer-address .item > .address,
 .footer-address .item > .contacts {
   display: block;
@@ -399,15 +395,16 @@ address {
 .projects-list {
   display: flex;
   flex-wrap: wrap;
-  margin-left: -30px;
-  margin-top: -30px;
+  gap: 30px;
+  /* margin-left: -30px;
+  margin-top: -30px; */
 }
 
-.projects-list > .projects-item {
+/* .projects-list > .projects-item {
   flex-basis: calc(100% / 3 - 30px);
   margin-left: 30px;
   margin-top: 30px;
-}
+} */
 
 .project-title {
   margin-bottom: 4px;
